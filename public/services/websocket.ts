@@ -22,9 +22,6 @@ class Socket {
     onmessage<T>(filter: string, cb: (message: IMessage<T>) => void) {
         this.subscriber = {filter, executor: cb};
     }
-
-    private initialize() {
-    }
 }
 
 export const socket = new Socket();
