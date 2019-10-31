@@ -1,14 +1,17 @@
-const express = require('express');
-const http = require('http');
-const app = express();
+import express, { Response, Request } from 'express';
+import http from 'http';
+
+const app =  express();
 const server = http.createServer(app);
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.sendFile('public/index.html', {root: __dirname })
 });
 
-server.listen(3000, function () {
+server.listen(3000, () => {
   console.log('listening on port 3000');
 });
+
+
