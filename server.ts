@@ -7,7 +7,7 @@ const server = http.createServer(app);
 app.use(express.static('public'));
 
 app.get('/', (req: Request, res: Response) => {
-  res.sendFile('public/index.html', {root: __dirname })
+  res.sendFile('public/index.html', { root: __dirname });
 });
 
 server.listen(3000, () => {
