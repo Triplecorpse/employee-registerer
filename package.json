@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node server.ts"
+    "start": "tsc public/index.ts && node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +17,7 @@
     "ts-loader": "^6.2.1",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.6.4"
-  },
-  "devDependencies": {
-    "tslint-config-airbnb": "^5.11.2"
   }
 }
