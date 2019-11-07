@@ -2,7 +2,7 @@ import express, { Response, Request } from 'express';
 import http from 'http';
 import { routes } from './routes';
 
-const app =  express();
+const app = express();
 export const server = http.createServer(app);
 
 app.use(express.static('../public'));
