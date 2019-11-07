@@ -19,5 +19,9 @@
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.4",
+    "socket.io": "^2.3.0"
   }
 }

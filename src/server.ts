@@ -3,7 +3,7 @@ import http from 'http';
 import { routes } from './routes';
 
 const app =  express();
-const server = http.createServer(app);
+export const server = http.createServer(app);
 
 app.use(express.static('../public'));
 app.use('/', routes);
