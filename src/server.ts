@@ -5,9 +5,9 @@ import { routes } from './routes';
 const app = express();
 export const server = http.createServer(app);
 
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 app.use('/', routes);
 
 server.listen(3000, () => {
-  console.log('listening on port 3000');
+  console.log('Server started on http://localhost:3000');
 });

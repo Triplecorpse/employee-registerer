@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc public/index.ts && ts-node src/server.ts"
+    "start": "npm run build:front && ts-node src/server.ts",
+    "build:front": "tsc --project ./public/tsconfig.front.json"
   },
   "author": "",
   "license": "ISC",
