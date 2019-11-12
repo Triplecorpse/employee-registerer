@@ -1,6 +1,6 @@
 import { init } from 'raspi';
 import { Serial } from 'raspi-serial';
- 
+
 init(() => {
   const serial = new Serial();
   const parts: Array<Buffer> = [];
@@ -12,7 +12,7 @@ init(() => {
 
     serial.on('data', (data) => {
       parts.push(data);
-      
+
       if (parts.length === 2) {
         const tempBuffer = Buffer.concat(parts);
         let tempRead = tempBuffer.toString();
@@ -21,11 +21,11 @@ init(() => {
         if (read !== tempRead) {
           buffer = tempBuffer;
           read = tempRead;
-         
+
           detailed(buffer);
         }
 
-        setTimeout(() => {tempRead = ''}, 1000);
+        setTimeout(() => { tempRead = ''; }, 1000);
       }
     });
   });
