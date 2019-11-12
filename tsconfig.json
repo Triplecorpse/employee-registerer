@@ -10,6 +10,6 @@
     "experimentalDecorators": true,
     "sourceMap": true
   },
-  "files": ["server.ts"],
+  "files": ["src/server.ts"],
   "exclude": ["node_modules"]
 }
