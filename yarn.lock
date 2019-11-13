@@ -899,6 +899,11 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
+j5-io-types@^2.4.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/j5-io-types/-/j5-io-types-2.5.0.tgz#dffdfcf993dcf10fc66f187edaef8d2dda02a1c7"
+  integrity sha512-S44ds7NZfVUL3xsvboNEIXnrZ0TDUPixKtdcO4+L3bUctWzAtHSTvPmyU9G8urqfzXl6d22xBq7c+sjGUrD4+w==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1249,6 +1254,21 @@ range-parser@~1.2.1:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
+raspi-board@^7.0.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/raspi-board/-/raspi-board-7.3.0.tgz#fe3f42a1d9e5618dc06187e36e3d6704c0609910"
+  integrity sha512-SbJx99NG1pwsfuErifDCcSf7Byi0bHfBCd/w6Ri68J1+2yqJ2gZN/utqO0edRXs0LDqDrJodQNmF7pnOYdOq0Q==
+  dependencies:
+    j5-io-types "^2.4.0"
+
+raspi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/raspi/-/raspi-6.0.1.tgz#a74d51b6764bbd24b676ad3c01dffcf353354ccd"
+  integrity sha512-vv7P8QgUCC0wjN9aBGi7SKy7LClZSsIMSQyEE+GUVzImbX44OTftj3Vjo+Kbl2d+acmjBNNkEk/jnzXDZMcI5g==
+  dependencies:
+    j5-io-types "^2.4.0"
+    raspi-board "^7.0.0"
+
 raw-body@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"
@@ -1578,7 +1598,7 @@ ts-loader@^6.2.1:
     micromatch "^4.0.0"
     semver "^6.0.0"
 
-ts-node@^8.4.1:
+ts-node@^8.5.0:
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.5.0.tgz#bc7d5a39133d222bf25b1693651e4d893785f884"
   integrity sha512-fbG32iZEupNV2E2Fd2m2yt1TdAwR3GTCrJQBHDevIiEBNy1A8kqnyl1fv7jmRmmbtcapFab2glZXHJvfD1ed0Q==
