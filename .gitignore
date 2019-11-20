@@ -1,5 +1,4 @@
 /node_modules
 /public/**/*.js
 package-lock.json
-index.js
-index.js.map
+/public/**/*.js.map
