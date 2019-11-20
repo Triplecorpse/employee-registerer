@@ -2,3 +2,5 @@
 /public/**/*.js
 package-lock.json
 /public/**/*.js.map
+/public/interfaces/ITableRow.js.map
+/public/interfaces/IVisitor.js.map
