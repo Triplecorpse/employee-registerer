@@ -24,4 +24,4 @@ class Socket {
     }
 }
 
-export const socket = new Socket();
+// export const socket = new Socket();

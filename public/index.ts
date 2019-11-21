@@ -115,7 +115,7 @@ function socketConnect() {
   // @ts-ignore
   const socket = io('http://localhost:3000');
 
-  socket.on('test', (data: any) => {
+  socket.io.on('test', (data: any) => {
     console.log(data);
   });
 }
