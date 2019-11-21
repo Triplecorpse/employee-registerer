@@ -13,6 +13,9 @@ export const io = socketIo(server);
 io.on('connection', (socket) => {
   console.log('socket connected to server');
   socket.emit('test', 'SOCKETS WORK NOW!');
+  socket.on('hardware', (data) => {
+    console.log(data);
+  });
 });
 
 mongoose.connect('mongodb://localhost:27017/test', {
