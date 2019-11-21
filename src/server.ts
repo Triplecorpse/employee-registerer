@@ -4,15 +4,17 @@ import mongoose from 'mongoose';
 import socketIo from 'socket.io';
 import { routes } from './routes';
 import { passIdController } from './pass-id-controller';
+import {IMessage} from './imessage';
 
 const app = express();
 export const server = http.createServer(app);
-
 export const io = socketIo(server);
 
 io.on('connection', (socket) => {
-  console.log('socket connected to server');
-  socket.emit('test', 'SOCKETS WORK NOW!');
+  socket.emit('connection', 'SOCKETS WORK NOW!');
+  socket.on('hardware', ({ payload }: IMessage<string>) => {
+    passIdController(Buffer.from(payload));
+  });
 });
 
 mongoose.connect('mongodb://localhost:27017/test', {
