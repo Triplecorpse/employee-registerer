@@ -5,17 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build:front && ts-node src/server.ts",
-    "build:front": "tsc --project ./public/tsconfig.front.json"
+    "start": "npm run build && ts-node src/server.ts",
+    "build:front": "tsc --project ./public/tsconfig.front.json",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "^2.3.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.7.12",
-    "raspi": "^6.0.1"
+    "raspi": "^6.0.1",
+    "socket.io": "^2.3.0"
   },
   "optionalDependencies": {
     "raspi-serial": "^5.1.2"

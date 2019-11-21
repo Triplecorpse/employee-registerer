@@ -1,10 +1,24 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './index.ts',
+    entry: './public/index.ts',
+    module: {
+        rules: [
+         {
+           test: /\.tsx?$/,
+           use: 'ts-loader',
+           exclude: /node_modules/
+         }
+       ]
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"]
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js'
-    }
+        filename: 'index.js',
+        path: path.resolve(__dirname, 'public/dist')
+    },
 };
+
+

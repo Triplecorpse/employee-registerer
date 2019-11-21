@@ -8,18 +8,17 @@ import { passIdController } from './pass-id-controller';
 const app = express();
 export const server = http.createServer(app);
 
-const io = socketIo(server);
+export const io = socketIo(server);
 
 io.on('connection', (socket) => {
   console.log('socket connected to server');
   socket.emit('test', 'SOCKETS WORK NOW!');
 });
 
-mongoose.connect('mongodb://localhost:27017/test',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+mongoose.connect('mongodb://localhost:27017/test', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(express.static('./public'));
 
