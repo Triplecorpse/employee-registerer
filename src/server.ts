@@ -1,15 +1,26 @@
 import express, { Response, Request } from 'express';
 import http from 'http';
 import mongoose from 'mongoose';
+import socketIo from 'socket.io';
 import { routes } from './routes';
 import { passIdController } from './pass-id-controller';
 
 const app = express();
 export const server = http.createServer(app);
 
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+export const io = socketIo(server);
 
-app.use(express.static('../public'));
+io.on('connection', (socket) => {
+  console.log('socket connected to server');
+  socket.emit('test', 'SOCKETS WORK NOW!');
+});
+
+mongoose.connect('mongodb://localhost:27017/test', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+app.use(express.static('./public'));
 
 app.use('/', routes);
 

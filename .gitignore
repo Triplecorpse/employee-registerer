@@ -2,3 +2,7 @@
 /public/**/*.js
 package-lock.json
 /public/**/*.js.map
+yarn.lock
+yarn-error.log
+
+
