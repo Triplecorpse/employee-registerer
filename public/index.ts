@@ -110,3 +110,14 @@ function visitorsToTableRows(visitors: IVisitor[]): ITableRow[] {
     return visitorText;
   });
 }
+
+function socketConnect() {
+  // @ts-ignore
+  const socket = io('http://localhost:3000');
+
+  socket.on('test', (data: any) => {
+    console.log(data);
+  });
+}
+
+socketConnect();

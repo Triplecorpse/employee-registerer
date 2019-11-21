@@ -9,7 +9,7 @@ export const server = http.createServer(app);
 
 mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
 
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 
 app.use('/', routes);
 
