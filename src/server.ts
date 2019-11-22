@@ -15,7 +15,12 @@ export const server = http.createServer(app);
 export const io = socketIo(server);
 
 io.on('connection', (socket) => {
-  socket.emit('connection', 'SOCKETS WORK NOW!');
+  if (socket.connected) {
+    console.log('Socket successfully connected');
+  } else {
+    console.log('Socket successfully disconnected');
+  }
+
   socket.on('hardware',
             ({ payload }: IMessage<IPassid>,
              cb: (msg: IMessage<IMessageResponse>) => {}) => {
