@@ -1,9 +1,10 @@
 import { socket } from './services/websocket';
 
-const inputEl: HTMLInputElement = document.getElementById('passid') as HTMLInputElement;
+const formEl = document.getElementById('send-passid-form') as HTMLFormElement;
+const inputEl = document.getElementById('passid') as HTMLInputElement;
 
-function sendPassid(event: Event) {
+formEl.addEventListener('submit', (event: Event) => {
   event.preventDefault();
 
-  socket.emit('hardware', inputEl.value);
-}
+  socket.emit('hardware', {inputEl.value});
+});
