@@ -11,7 +11,7 @@ init(() => {
   serial.open(() => {
     console.log('Place you RFID card');
 
-    serial.on('data', (data) => {
+    serial.on('data', (data: Buffer) => {
       parts.push(data);
 
       if (parts.length === 2) {

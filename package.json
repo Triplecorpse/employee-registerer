@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && ts-node src/server.ts",
     "build:front": "tsc --project ./public/tsconfig.front.json",
-    "build": "webpack"
+    "build": "webpack",
+    "mongod:windows": "cd %ProgramFiles%/MongoDB/Server/3.6/bin/ && start mongod"
   },
   "author": "",
   "license": "ISC",

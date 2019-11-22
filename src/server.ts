@@ -4,6 +4,10 @@ import mongoose from 'mongoose';
 import socketIo from 'socket.io';
 import { routes } from './routes';
 import { passIdController } from './pass-id-controller';
+import { Message } from '../models/Message';
+import { IMessage } from '../interfaces/IMesage';
+import { IPassid } from '../interfaces/IPassid';
+import { IMessageResponse } from '../interfaces/IMessageResponse';
 
 const app = express();
 export const server = http.createServer(app);
@@ -11,8 +15,25 @@ export const server = http.createServer(app);
 export const io = socketIo(server);
 
 io.on('connection', (socket) => {
-  console.log('socket connected to server');
-  socket.emit('test', 'SOCKETS WORK NOW!');
+  if (socket.connected) {
+    console.log('Socket successfully connected');
+  } else {
+    console.log('Socket successfully disconnected');
+  }
+
+  socket.on('hardware',
+            ({ payload }: IMessage<IPassid>,
+             cb: (msg: IMessage<IMessageResponse>) => {}) => {
+              try {
+                passIdController(Buffer.from(payload.passid));
+                cb(new Message<IMessageResponse>('hardware', { success: true, description: '' }));
+              } catch (e) {
+                cb(new Message<IMessageResponse>('hardware', {
+                  success: false,
+                  description: e.toString(),
+                }));
+              }
+            });
 });
 
 mongoose.connect('mongodb://localhost:27017/test', {
