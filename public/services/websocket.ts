@@ -1,6 +1,6 @@
 // @ts-ignore
 export const socket = window.io('http://localhost:3000');
 
-socket.on('test', (data: any) => {
+socket.on('connection', (data: any) => {
   console.log(data);
 });

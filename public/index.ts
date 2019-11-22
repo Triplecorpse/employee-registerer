@@ -1,5 +1,5 @@
-import { IVisitor, TVisitor } from './interfaces/IVisitor';
-import { ITableRow } from './interfaces/ITableRow';
+import { IVisitor, TVisitor } from '../interfaces/IVisitor';
+import { ITableRow } from '../interfaces/ITableRow';
 import './send-passid';
 
 function getMessage() {
