@@ -1,6 +1,5 @@
 import { init } from 'raspi';
 import { Serial } from 'raspi-serial';
-import { passIdController } from './pass-id-controller';
 
 init(() => {
   const serial = new Serial();
@@ -22,9 +21,13 @@ init(() => {
         if (read !== tempRead) {
           buffer = tempBuffer;
           read = tempRead;
-
-          passIdController(buffer);
         }
+
+        const tag = parseInt(buffer.slice(3, 11).toString(), 16).toString(10);
+        const zeroes = 10 - tag.length;
+        const id = '0'.repeat(zeroes) + tag;
+
+        console.log(id);
 
         setTimeout(() => { tempRead = ''; }, 1000);
       }
